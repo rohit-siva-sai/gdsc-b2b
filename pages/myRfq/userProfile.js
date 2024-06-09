@@ -21,6 +21,7 @@ import { Drawer } from "antd";
 import SimpleSideBar from "@/components/myRfq/simpleSideBar";
 import { Seller } from "@/useStore/seller";
 import { Common } from "@/useStore/common";
+import { MdOutlineSegment } from "react-icons/md";
 
 const Home = ({ user, phoneNumber }) => {
   const [
@@ -83,7 +84,8 @@ const Home = ({ user, phoneNumber }) => {
 
   // const [profileUser, setProfileUser] = useState(userDetails);
   const [sellerCategory] = Seller((store)=>[store.sellerCategory])
-  const [updateUser] = Common((store)=>[store.updateUser])
+  
+  const [updateUser,updateShowSideBar] = Common((store)=>[store.updateUser,store.updateShowSideBar])
 
 
 
@@ -224,6 +226,9 @@ const logOut = async () => {
         </Drawer>
 
         <div className="md:h-[640px] bg-gray-100 px-4  md:px-6 flex-1 pb-8  overflow-y-scroll ">
+         <div className="w-fit ml-auto mt-4 cursor-pointer md:hidden block" onClick={showDrawer} >
+         <MdOutlineSegment className="text-white rounded-full bg-cyan-600 text-4xl p-1" />
+         </div>
           <div className="flex flex-col space-y-8">
             <UserDetails  />
             <ComapnyDetails  />

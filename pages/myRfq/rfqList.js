@@ -7,6 +7,7 @@ import { Drawer } from "antd";
 import { collection, getDocs } from "firebase/firestore";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { MdOutlineSegment } from "react-icons/md";
 
 const RfqList = ({updatedRfqData,isLoading ,filterRfqData}) => {
   const [showFilter, setShowFilter] = useState(false);
@@ -59,6 +60,9 @@ const RfqList = ({updatedRfqData,isLoading ,filterRfqData}) => {
   // }, [user]);
   return (
     <div className="md:h-[640px] md:overflow-hidden">
+      <div className="w-fit ml-auto mt-4 mx-4 cursor-pointer md:hidden block" onClick={showDrawer} >
+         <MdOutlineSegment className="text-white rounded-full bg-cyan-600 text-3xl p-1" />
+         </div>
       <div className="flex">
         <div className=" hidden md:block w-1/6">
           {/* <Sidebar /> */}
@@ -75,6 +79,7 @@ const RfqList = ({updatedRfqData,isLoading ,filterRfqData}) => {
         >
           <SimpleSideBar />
         </Drawer>
+        
         <AllRfqs updatedRfqData={modifiedRfqData} isLoading={isLoading} filterRfqData={filterRfqData} />
       </div>
     </div>

@@ -30,6 +30,7 @@ const SimpleSideBar = () => {
       store.updateShowSideBar,
     ]);
     
+    
   return (
     <div className="md:h-[640px]  bg-white  py-8 overflow-y-auto w-full scroll-smooth">
       <div className="flex flex-col space-y-4">

@@ -8,7 +8,7 @@ const common = (set) => ({
   showSideBar: false,
 
   changeShowLogin: async (value) => set((store) => ({ showLogin: value })),
-  updateShowSideBar: async (value) => set((store) => ({ showSideBar: value })),
+  updateShowSideBar: async (value) => set((store) => ({ showSideBar: !store.showSideBar })),
   updateUser: async (value) => set((store) => ({ user: value })),
   updateUserId: async (value) => set((store) => ({ userId: value })),
 });
