@@ -20,6 +20,7 @@ import { Company } from "@/useStore/company";
 import { Drawer } from "antd";
 import SimpleSideBar from "@/components/myRfq/simpleSideBar";
 import { Seller } from "@/useStore/seller";
+import { Common } from "@/useStore/common";
 
 const Home = ({ user, phoneNumber }) => {
   const [
@@ -82,6 +83,8 @@ const Home = ({ user, phoneNumber }) => {
 
   // const [profileUser, setProfileUser] = useState(userDetails);
   const [sellerCategory] = Seller((store)=>[store.sellerCategory])
+  const [updateUser] = Common((store)=>[store.updateUser])
+
 
 
   // const getUser = async (id) => {
@@ -141,20 +144,34 @@ const Home = ({ user, phoneNumber }) => {
   //   }
   // };
 
+// const logOut = async () => {
+//     signOut(getAuth())
+//       .then(() => {
+//         console.log("Sign-out successful.");
+//         localStorage.removeItem("userDetails");
+//         handleUser(null);
+//         setProfileUser({ username: "", email: "", phone_number: "", cart: [] });
+//         router.push("/");
+//         router.reload();
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//   };
 const logOut = async () => {
-    signOut(getAuth())
-      .then(() => {
-        console.log("Sign-out successful.");
-        localStorage.removeItem("userDetails");
-        handleUser(null);
-        setProfileUser({ username: "", email: "", phone_number: "", cart: [] });
-        router.push("/");
-        router.reload();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  signOut(getAuth())
+    .then(() => {
+      console.log("Sign-out successful.");
+      localStorage.removeItem("userDetails");
+      updateUser(null);
+      updateUserId(null);
+      router.push("/");
+    })
+    .catch((error) => {
+      // An error happened.
+      console.log(error);
+    });
+};
 
   const updateProfileUser = async (id, updateName, updateEmail) => {
     const userDoc = doc(db, "users", id);
@@ -186,6 +203,7 @@ const logOut = async () => {
       console.log(error.message);
     }
   }, [router]);
+  
   return (
     <div className="md:h-[640px]  overflow-hidden">
       <div className="flex">
@@ -209,6 +227,9 @@ const logOut = async () => {
           <div className="flex flex-col space-y-8">
             <UserDetails  />
             <ComapnyDetails  />
+            <div className="cursor-pointer px-4 p-1 bg-cyan-600 text-white w-fit  rounded ml-8" onClick={logOut}>
+          logout
+        </div>
           </div>
         </div>
       </div>

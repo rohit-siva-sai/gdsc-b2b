@@ -48,91 +48,91 @@ const options = [
       },
     ],
   },
-  {
-    value: "Petrolium",
-    label: "Petrolium",
-    children: [
-      {
-        value: "Petrolium",
-        label: "Petrolium",
-        children: [
-          {
-            value: "crude oil",
-            label: "crude oil",
-          },
-          {
-            value: "Disel",
-            label: "Disel",
-          },
-          {
-            value: "Petrol",
-            label: "Petrol",
-          },
-        ],
-      },
-      {
-        value: "workplace safety products",
-        label: "workplace safety products",
-        children: [
-          {
-            value: "boots",
-            label: "boots",
-          },
-          {
-            value: "gloves",
-            label: "gloves",
-          },
-          {
-            value: "shoes",
-            label: "shoes",
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   value: "Petrolium",
+  //   label: "Petrolium",
+  //   children: [
+  //     {
+  //       value: "Petrolium",
+  //       label: "Petrolium",
+  //       children: [
+  //         {
+  //           value: "crude oil",
+  //           label: "crude oil",
+  //         },
+  //         {
+  //           value: "Disel",
+  //           label: "Disel",
+  //         },
+  //         {
+  //           value: "Petrol",
+  //           label: "Petrol",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       value: "",
+  //       label: "workplace safety products",
+  //       children: [
+  //         {
+  //           value: "boots",
+  //           label: "boots",
+  //         },
+  //         {
+  //           value: "gloves",
+  //           label: "gloves",
+  //         },
+  //         {
+  //           value: "shoes",
+  //           label: "shoes",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 
-  {
-    value: "industrial measuring, testing and inspection",
-    label: "industrial measuring, testing and inspection",
-    children: [
-      {
-        value: "distance measuring equipments",
-        label: "distance measuring equipments",
-        children: [
-          {
-            value: "laser",
-            label: "laser",
-          },
-          {
-            value: "wheels",
-            label: "wheels",
-          },
-          {
-            value: "tape",
-            label: "tape",
-          },
-        ],
-      },
-      {
-        value: "electrical measuring equipment",
-        label: "electrical measuring equipment",
-        children: [
-          {
-            value: "ammemter",
-            label: "ammemter",
-          },
-          {
-            value: "frequency meters",
-            label: "frequency meters",
-          },
-          {
-            value: "power & energy meters",
-            label: "power & energy meters",
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   value: "industrial measuring, testing and inspection",
+  //   label: "industrial measuring, testing and inspection",
+  //   children: [
+  //     {
+  //       value: "distance measuring equipments",
+  //       label: "distance measuring equipments",
+  //       children: [
+  //         {
+  //           value: "laser",
+  //           label: "laser",
+  //         },
+  //         {
+  //           value: "wheels",
+  //           label: "wheels",
+  //         },
+  //         {
+  //           value: "tape",
+  //           label: "tape",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       value: "electrical measuring equipment",
+  //       label: "electrical measuring equipment",
+  //       children: [
+  //         {
+  //           value: "ammemter",
+  //           label: "ammemter",
+  //         },
+  //         {
+  //           value: "frequency meters",
+  //           label: "frequency meters",
+  //         },
+  //         {
+  //           value: "power & energy meters",
+  //           label: "power & energy meters",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 ];
 
 const Category = ({categoryData}) => {

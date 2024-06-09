@@ -4,6 +4,7 @@ import Score from "@/components/rfq/score";
 import { db } from "@/config/firebase";
 import { Common } from "@/useStore/common";
 import { useStore } from "@/useStore/details";
+import { SideBar } from "@/useStore/sideBar";
 
 import { collection, doc, setDoc, updateDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
@@ -12,7 +13,10 @@ import { useEffect } from "react";
 
 const Rfq = () => {
   const [changeShowLogin,user] = Common((store)=>[store.changeShowLogin,store.user])
-  
+  const [ updateNewRfq] = SideBar((store) => [
+    
+    store.updateNewRfq,
+  ]);
 
   const [
     productName,
@@ -74,7 +78,7 @@ const router = useRouter()
       console.log(err);
     }
   };
-  // console.log('ass',user);
+
 
   return (
     <div className="bg-gray-50 py-6 md:py-12">
@@ -86,7 +90,7 @@ const router = useRouter()
               !user && changeShowLogin(true)
               user && email!=0 && submitNewUser()
                updateProgress()
-               
+               updateNewRfq()
               user && router.push("/myRfq/rfqList")
               
             }}

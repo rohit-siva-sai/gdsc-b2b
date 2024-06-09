@@ -36,13 +36,13 @@ const Email = () => {
         onBlur={() => {
           updateEmail(userMail);
           userMail?.length > 1 && userMail.includes("@")
-            ? (scoreProduct[8].score = true)
-            : (scoreProduct[8].score = false);
-          if (scoreProduct[8].score && i == 1) {
+            ? (scoreProduct[6].score = true)
+            : (scoreProduct[6].score = false);
+          if (scoreProduct[6].score && i == 1) {
             updateIncreaseProgress(10);
             setI(2);
           }
-          if (!scoreProduct[8].score && i == 2) {
+          if (!scoreProduct[6].score && i == 2) {
             updateDecreaseProgress(10);
             setI(1);
           }
