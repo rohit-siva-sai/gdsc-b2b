@@ -24,7 +24,7 @@ const RequestDetails = ({ rfqData, isLoading }) => {
             </p>
             <p
               className={`${
-                rfqData?.rfqScore < 60 ? "text-rose-600" : "text-green-600"
+                rfqData?.rfqScore < 60 ? "text-cyan-600" : "text-green-600"
               } font-bold text-2xl`}
             >
               {rfqData?.rfqScore}

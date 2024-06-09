@@ -68,7 +68,7 @@ const UserDetails = ({   }) => {
             }}
             className="cursor-pointer"
           >
-            <HiPencil size={25} className="hover:text-rose-500" />
+            <HiPencil size={25} className="hover:text-cyan-500" />
           </div>
 
           <Modal

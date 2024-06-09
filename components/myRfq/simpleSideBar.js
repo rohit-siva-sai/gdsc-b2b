@@ -31,7 +31,7 @@ const SimpleSideBar = () => {
               <div
                 className={`flex space-x-2 mx-4  px-2 cursor-pointer  py-2 rounded-xl items-center ${
                   linkActive == item.value
-                    ? "bg-rose-600 text-white"
+                    ? "bg-cyan-600 text-white"
                     : "bg-transparent hover:bg-gray-100 text-gray-800"
                 } `}
                 onClick={() => {

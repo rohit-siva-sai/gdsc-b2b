@@ -52,7 +52,7 @@ const InquiryList = ({  updatedRfqData, filterRfqData, isLoading }) => {
           <SimpleSideBar />
         </Drawer>
         <AllInquiry
-          user={user}
+        
           updatedRfqData={modifiedRfqData}
           filterRfqData={filterRfqData}
           isLoading={isLoading} 

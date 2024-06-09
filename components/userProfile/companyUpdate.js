@@ -148,7 +148,7 @@ const CompanyUpdate = ({ getUser }) => {
             updateUser(userId);
           }}
         >
-          <div className="bg-rose-500 py-1 px-8 hover:opacity-80 rounded-3xl font-semibold text-white cursor-pointer">
+          <div className="bg-cyan-500 py-1 px-8 hover:opacity-80 rounded-3xl font-semibold text-white cursor-pointer">
             Save
           </div>
         </div>

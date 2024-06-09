@@ -90,7 +90,7 @@ const UserUpdate = ({  }) => {
         </div>
         <div className="bg-gray-50 sticky flex justify-center -bottom-5  py-2 ">
           <div
-            className="bg-rose-500 py-1 px-8 hover:opacity-80 rounded-3xl font-semibold text-white cursor-pointer"
+            className="bg-cyan-500 py-1 px-8 hover:opacity-80 rounded-3xl font-semibold text-white cursor-pointer"
             onClick={() => {
               updateUser(userId);
             }}

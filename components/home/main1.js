@@ -46,7 +46,25 @@ const array = [
 const Main1 = () => {
   return (
     <div className="">
-      <div className="flex justify-center py-1 space-x-14">
+      
+      <div className="relative overflow-hidden  ">
+        <picture>
+          <img
+            src="https://static-assets.business.amazon.com/assets/in/herobanners/allhero/v2/196_MRO.jpg.transform/2048x682/image.jpg"
+            alt=""
+          />
+        </picture>
+        <div className="absolute top-0 left-0 py-20   w-1/2 flex flex-col md:px-32 justify-center  ">
+        <div className="flex justify-between flex-col">
+          <p className="font-semibold  text-white stroke">Sell Better</p>
+          <p className="font-semibold  text-white stroke">Buy Better</p>
+        </div>
+        <p className="font-semibold text-end text-white">The one stop shopping destination</p>
+      
+         
+        </div>
+      </div>
+      <div className="flex justify-center py-4 space-x-14">
         {array.map((item) => {
           return (
             <div>
@@ -57,25 +75,6 @@ const Main1 = () => {
             </div>
           );
         })}
-      </div>
-      <div className="relative overflow-hidden  ">
-        <picture>
-          <img
-            src="https://static-assets.business.amazon.com/assets/in/herobanners/allhero/v2/196_MRO.jpg.transform/2048x682/image.jpg"
-            alt=""
-          />
-        </picture>
-        <div className="absolute top-0 left-0 py-20  border w-1/2 flex flex-col md:px-32 justify-center  ">
-          <div className="flex flex-col">
-            <p className="font-semibold text-8xl te0 text-white ">Sell</p>
-            <p className="font-semibold text-8xl te0 text-white self-end" >Better</p>
-          </div>
-          <div className="flex flex-col">
-            <p className="font-semibold text-8xl te0 text-white ">Buy</p>
-            <p className="font-semibold text-8xl te0 text-white self-end" >Better</p>
-          </div>
-         
-        </div>
       </div>
     </div>
   );

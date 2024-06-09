@@ -23,7 +23,7 @@ const PhotoCard = ({  }) => {
           </p>
           <HiPencil
             size={20}
-            className="hidden group-hover:block hover:text-rose-500 "
+            className="hidden group-hover:block hover:text-cyan-500 "
             onClick={() => {
               updateUserUpdate("username");
               updateOpenUserModel(true);
@@ -36,7 +36,7 @@ const PhotoCard = ({  }) => {
           </p>
           <HiPencil
             size={20}
-            className="hidden group-hover:block hover:text-rose-500 "
+            className="hidden group-hover:block hover:text-cyan-500 "
             onClick={() => {
               updateUserUpdate("jobTitle");
               updateOpenUserModel(true);

@@ -23,7 +23,7 @@ const CompanyCard = ({ name,title, value }) => {
           </div>
           <HiPencil
             size={22}
-            className="invisible group-hover:visible hover:text-rose-500 "
+            className="invisible group-hover:visible hover:text-cyan-500 "
             onClick={() => {
               updateCompanyUpdate(name);
               updateOpenCompanyModel(true);
@@ -35,7 +35,7 @@ const CompanyCard = ({ name,title, value }) => {
           <div className=" flex-1 text-sm md:text-base font-semibold text-gray-800">{value}</div>
           <HiPencil
             size={22}
-            className="invisible group-hover:visible hover:text-rose-500 "
+            className="invisible group-hover:visible hover:text-cyan-500 "
             onClick={() => {
               updateCompanyUpdate(name);
               updateOpenCompanyModel(true);

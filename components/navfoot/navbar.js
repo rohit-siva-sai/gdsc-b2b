@@ -37,7 +37,8 @@ const Navbar = () => {
         </div> */}
           <div
             onClick={() => {
-              !user && changeShowLogin(true); user && router.push("/myRfq/home");
+              !user && changeShowLogin(true)
+              user && router.push("/myRfq/userProfile");
             }}
             className="flex   overflow-x-hidden items-center md:px-8 text-center rounded-md py-2 px-2 cursor-pointer hover:bg-cyan-600 bg-cyan-600 space-x-2"
           >

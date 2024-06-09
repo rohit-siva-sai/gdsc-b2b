@@ -107,7 +107,7 @@ export default function App({ Component, pageProps }) {
         await setDoc(doc(db, "users", id), {
           username: { firstName: "first", lastName: "Last" },
           email: "example@gmail.com",
-          phoneNumber: 8247646633,
+          phoneNumber: user?.phoneNumber,
           job: job,
           address: userAddress,
           companyWebsite: companyWebsite,

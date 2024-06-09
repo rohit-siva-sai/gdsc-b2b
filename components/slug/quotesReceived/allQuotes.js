@@ -12,7 +12,7 @@ const AllQuotes = ({ quoteData }) => {
         <p className="font-bold md:px-0 px-6 text-base md:text-xl  text-gray-800 mb-4">
           Quotes Received ({quoteData?.length} of Maximun 10)
         </p>
-        <div className="px-2 md:mx-0 mx-6 w-fit  py-1 hover:border-rose-600 border text-gray-600 hover:text-rose-600 rounded cursor-pointer">
+        <div className="px-2 md:mx-0 mx-6 w-fit  py-1 hover:border-cyan-600 border text-gray-600 hover:text-cyan-600 rounded cursor-pointer">
           Compare Quotations
         </div>
       </div>
@@ -54,7 +54,7 @@ const AllQuotes = ({ quoteData }) => {
                   </p>
                   <p
                     className={`font-semibold text-sm md:text-base text-white px-4 py-1 rounded-3xl  ${
-                      item.quotationScore > 50 ? "bg-green-500" : "bg-rose-500"
+                      item.quotationScore > 50 ? "bg-green-500" : "bg-cyan-500"
                     } `}
                   >
                     {item.quotationScore}

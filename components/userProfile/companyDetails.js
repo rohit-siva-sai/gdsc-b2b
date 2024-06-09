@@ -76,7 +76,7 @@ const ComapnyDetails = ({}) => {
           }}
           className="cursor-pointer"
         >
-          <HiPencil size={25} className="hover:text-rose-500" />
+          <HiPencil size={25} className="hover:text-cyan-500" />
         </div>
 
         <Modal
@@ -99,7 +99,7 @@ const ComapnyDetails = ({}) => {
           </p>
           <HiPencil
             size={22}
-            className="invisible group-hover:visible hover:text-rose-500 "
+            className="invisible group-hover:visible hover:text-cyan-500 "
             onClick={() => {
               updateCompanyUpdate("companyName");
               updateOpenCompanyModel(true);

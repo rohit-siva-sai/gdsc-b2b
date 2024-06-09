@@ -20,7 +20,7 @@ const DetailCard = ({name, Icon, title, value }) => {
         <p className="font-semibold md:text-base text-sm text-gray-700 ">&nbsp;{value}</p>
         <HiPencil
           size={20}
-          className="invisible group-hover:visible hover:text-rose-500 "
+          className="invisible group-hover:visible hover:text-cyan-500 "
           onClick={() => {
             updateUserUpdate(name);
             updateOpenUserModel(true)

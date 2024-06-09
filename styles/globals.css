@@ -19,6 +19,15 @@
 body {
  
 }
+.stroke{
+   /* text-shadow: 2px 0 rgb(217, 38, 38),rgb(226, 45, 45)x 0 rgb(232, 55, 55), 0 2px rgb(211, 44, 44), 0 -2px rgb(241, 66, 66),
+            1px 1px rgb(188, 34, 34), -1px -1px rgb(235, 38, 38), 1px -1px rgb(213, 47, 47), -1px 1px rgb(201, 40, 40); */
+            -webkit-text-stroke: 5px rgb(255, 255, 255);
+            font-stretch: extra-condensed;
+            font-size: 90px;
+            font-family: cursive;
+           color: black;
+}
 
 @layer utilities {
   .text-balance {
