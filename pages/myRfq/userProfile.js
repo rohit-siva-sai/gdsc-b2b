@@ -208,7 +208,7 @@ const logOut = async () => {
     <div className="md:h-[640px]  overflow-hidden">
       <div className="flex">
         <div className=" hidden md:block w-1/6">
-          {/* <Sidebar /> */}
+          
           <SimpleSideBar />
         </div>
 

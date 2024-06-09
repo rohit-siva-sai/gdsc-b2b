@@ -1,3 +1,4 @@
+import { Common } from "@/useStore/common";
 import { SideBar } from "@/useStore/sideBar";
 import Link from "next/link";
 import React from "react";
@@ -22,6 +23,13 @@ const SimpleSideBar = () => {
       store.updateLinkActive,
       store.updateTitleActive,
     ]);
+  const [ showSideBar, updateShowSideBar] =
+    Common((store) => [
+    
+      store.showSideBar,
+      store.updateShowSideBar,
+    ]);
+    
   return (
     <div className="md:h-[640px]  bg-white  py-8 overflow-y-auto w-full scroll-smooth">
       <div className="flex flex-col space-y-4">
