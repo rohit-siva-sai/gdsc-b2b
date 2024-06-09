@@ -2,14 +2,27 @@ import AllRfqs from "@/components/myRfq/allRfqs";
 
 import SimpleSideBar from "@/components/myRfq/simpleSideBar";
 import { db } from "@/config/firebase";
+import { Common } from "@/useStore/common";
 import { Drawer } from "antd";
 import { collection, getDocs } from "firebase/firestore";
 import React, { useState } from "react";
 import { useEffect } from "react";
 
-const RfqList = ({ user,rfqData }) => {
+const RfqList = ({rfqData }) => {
   const [showFilter, setShowFilter] = useState(false);
+  const [modifiedRfqData,setModifiedfqData] = useState([])
+  const [user] = Common((store) => [store.user])
 
+
+  const removeCommon = ()=>{
+    const data = rfqData.filter((item)=> item.user==user.uid )
+    setModifiedfqData(data)
+    // console.log('data',data);
+    
+  }
+  useEffect(()=>{
+    removeCommon()
+  },[rfqData])
   const onClose = () => {
     setShowFilter(false);
   };
@@ -62,7 +75,7 @@ const RfqList = ({ user,rfqData }) => {
         >
           <SimpleSideBar />
         </Drawer>
-        <AllRfqs rfqData={rfqData} />
+        <AllRfqs rfqData={modifiedRfqData} />
       </div>
     </div>
   );
