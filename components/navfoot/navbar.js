@@ -4,8 +4,11 @@ import Login from "./login";
 import { FaTag, FaRegUserCircle } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { User } from "@/useStore/user";
 
 const Navbar = () => {
+  const [userDetails] = User((store)=>[store.userDetails])
+
   const [showLogin, changeShowLogin, user] = Common((store) => [
     store.showLogin,
     store.changeShowLogin,
@@ -46,7 +49,7 @@ const Navbar = () => {
             {user ? (
               <p className="text-white font-semibold md:block hidden ">
                 Welcome
-                {user?.uid && <span>,{user?.uid}</span>}
+                {userDetails?.username?.firstName?.length > 2 && <span>,{userDetails?.username?.firstName}</span> }
               </p>
             ) : (
               <p className="text-white font-semibold md:block hidden ">Login</p>
