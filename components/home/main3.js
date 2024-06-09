@@ -3,13 +3,13 @@ import React from "react";
 
 const Main3 = () => {
   return (
-    <div className="my-12 px-24">
+    <div className="my-6 md:my-12 px-4 md:px-24">
       <div>
         <p className="font-semibold text-4xl text-gray-700 text-center underline decoration-2 underline-offset-4 decoration-cyan-600 ">
           Start trading in 3 simple steps
         </p>
         <div className="mt-6">
-          <div className="grid grid-cols-5">
+          <div className="grid grid-cols-1 md:grid-cols-5">
             <picture>
               <img
                 src="https://ud-img.azureedge.net/w_720,q_90/u/assets/ppuy1q441skzq5rkviqh.png"
@@ -35,7 +35,7 @@ const Main3 = () => {
               />
             </picture>
           </div>
-          <div className="grid grid-cols-5 mt-4">
+          <div className="grid grid-cols-1 md:gap-y-6 md:grid-cols-5 mt-4">
             <div className="flex flex-col space-y-8 text-center">
                 <p className="text-gray-800 font-semibold text-xl ">Create an account</p>
                 <p className="font-semibold text-gray-500">Register using your mobile number. Enter your Name, Shop name and Pincode.</p>

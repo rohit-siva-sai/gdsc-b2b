@@ -25,7 +25,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main
-      className={``}
+      className={`overflow-x-hidden`}
     >
       <Main1 />
       <Main3/>

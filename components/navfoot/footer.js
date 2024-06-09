@@ -25,18 +25,18 @@ const Footer = () => {
       });
   };
   return (
-    <div className="py-4 border-2  px-12 mt-6 bg-gray-200">
-      <div className="flex  space-x-24 items-start">
+    <div className="py-4 border-2  px-4 md:px-12 mt-6 bg-gray-200">
+      <div className="flex space-x-6 md:space-x-24 items-start">
         <Link href={"/"}>
           <picture>
             <img
               src="https://www.shutterstock.com/image-vector/creative-design-word-b2b-600nw-2355011677.jpg"
               alt=""
-              className="w-44 rounded-xl"
+              className="w-20 md:w-44 rounded-xl"
             />
           </picture>
         </Link>
-        <div className="flex flex-1 justify-around">
+        <div className="flex md:flex-row flex-col space-y-4 md:space-y-0  flex-1 justify-around">
           <div className="flex flex-col space-y-2 mt-4">
             <Link href={"/"}>
               <p className="font-semibold text-gray-600 text-base hover:underline decoration-2 decoration-cyan-600 underline-offset-2">
@@ -126,9 +126,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="cursor-pointer" onClick={logOut}>
+        {/* <div className="cursor-pointer" onClick={logOut}>
           logout
-        </div>
+        </div> */}
       </div>
     </div>
   );

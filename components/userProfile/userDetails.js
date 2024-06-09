@@ -39,7 +39,7 @@ const UserDetails = ({   }) => {
     store.updateOpenUserModel,
     store.userDetails
   ]);
-  console.log("userdeatils", userDetails);
+  // console.log("userdeatils", userDetails);
   const [userChange] = SideBar((store) => [store.userChange]);
   useEffect(() => {
     if (userDetails) {

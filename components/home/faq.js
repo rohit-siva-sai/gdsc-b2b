@@ -26,7 +26,7 @@ const array = [
 
 const Faq = () => {
   return (
-    <div className="px-40 py-10">
+    <div className="md:px-40 px-4 py-10">
       <p className="text-3xl font-bold pb-8 text-gray-800">FAQs</p>
       <div className="flex flex-col space-y-4">
         {array.map((item) => {

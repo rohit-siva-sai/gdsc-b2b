@@ -2,10 +2,10 @@ import React from 'react'
 
 const Main2 = () => {
   return (
-    <div className='my-12 px-24'>
+    <div className='my-6 md:my-12 px-4 md:px-24'>
       <div>
-       <p className='font-semibold text-4xl underline underline-offset-4 decoration-cyan-600 text-center'> Why Sell And Buy on B2B</p>
-        <div className='mt-16 grid grid-cols-3 gap-x-7 justify-items-center gap-y-20'>
+       <p className='font-semibold text-2xl md:text-4xl underline underline-offset-4 decoration-cyan-600 text-center'> Why Sell And Buy on B2B</p>
+        <div className='mt-16 grid grid-cols-2 md:grid-cols-3 gap-x-7 justify-items-center gap-y-20'>
           <div className='flex flex-col space-y-6  '>
             <picture>
               <img src="https://udaan.com/images/help/sell-1.png" alt="" className='w-48 mx-auto' />

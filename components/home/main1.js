@@ -52,24 +52,27 @@ const Main1 = () => {
           <img
             src="https://static-assets.business.amazon.com/assets/in/herobanners/allhero/v2/196_MRO.jpg.transform/2048x682/image.jpg"
             alt=""
+            className="w-ful md:w-full h-[200px] md:h-full"
           />
         </picture>
-        <div className="absolute top-0 left-0 py-20   w-1/2 flex flex-col md:px-32 justify-center  ">
-        <div className="flex justify-between flex-col">
-          <p className="font-semibold  text-white stroke">Sell Better</p>
-          <p className="font-semibold  text-white stroke">Buy Better</p>
+        <div className="absolute top-0 left-0 py-20   md:w-1/2 flex flex-col md:px-32 justify-center  ">
+        <div className="flex justify-between flex-col ml-4 md:ml-0">
+          <p className="font-semibold  text-white md:block hidden stroke">Sell Better</p>
+          <p className="font-semibold  text-white md:block hidden stroke">Buy Better</p>
+          <p className="font-semibold text-2xl text-white md:hidden block ">Sell Better</p>
+          <p className="font-semibold text-2xl text-white md:hidden block ">Buy Better</p>
         </div>
-        <p className="font-semibold text-lg text-end text-white">The one stop shopping destination !!!</p>
+        <p className="font-semibold ml-2 md:ml-0 md:text-lg md:text-end text-white">The one stop shopping destination !!!</p>
       
          
         </div>
       </div>
-      <div className="flex justify-center py-4 space-x-14">
+      <div className="flex justify-center py-4 px-2 md:px-0 space-x-4 overflow-x-auto md:space-x-14">
         {array.map((item) => {
           return (
             <div>
               <picture>
-                <img src={item.bgImage} alt="" className="w-24 py-2" />
+                <img src={item.bgImage} alt="" className="w-full md:w-24 py-2" />
               </picture>
               <p className="text-xs font-semibold text-center">{item.title}</p>
             </div>
