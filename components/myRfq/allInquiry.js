@@ -237,11 +237,7 @@ const AllInquiry = ({
                         </div>
                       </div>
                       <div className=" flex items-center col-span-2 md:col-span-5 space-x-4 flex-1 ">
-                        <div className="w-16 md:flex hidden  rounded h-16 bg-gray-100  items-center justify-center ">
-                          <p className="font-semibold text-center text-gray-400  text-xs">
-                            no image provided
-                          </p>
-                        </div>
+                       
                         <div className="flex  flex-col space-y-4 items-stretch ">
                           <p className="font-semibold text-sm md:text-base text-gray-400 ">
                             {item.productName}

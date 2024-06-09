@@ -8,21 +8,21 @@ import { collection, getDocs } from "firebase/firestore";
 import React, { useState } from "react";
 import { useEffect } from "react";
 
-const RfqList = ({rfqData }) => {
+const RfqList = ({updatedRfqData,isLoading ,filterRfqData}) => {
   const [showFilter, setShowFilter] = useState(false);
   const [modifiedRfqData,setModifiedfqData] = useState([])
   const [user] = Common((store) => [store.user])
 
 
   const removeCommon = ()=>{
-    const data = rfqData.filter((item)=> item.user==user.uid )
+    const data = updatedRfqData.filter((item)=> item.user==user.uid )
     setModifiedfqData(data)
     // console.log('data',data);
     
   }
   useEffect(()=>{
     removeCommon()
-  },[rfqData])
+  },[updatedRfqData])
   const onClose = () => {
     setShowFilter(false);
   };
@@ -75,7 +75,7 @@ const RfqList = ({rfqData }) => {
         >
           <SimpleSideBar />
         </Drawer>
-        <AllRfqs rfqData={modifiedRfqData} />
+        <AllRfqs updatedRfqData={modifiedRfqData} isLoading={isLoading} filterRfqData={filterRfqData} />
       </div>
     </div>
   );

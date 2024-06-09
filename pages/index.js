@@ -18,6 +18,7 @@ import { useStore } from "@/useStore/store";
 import Main1 from "@/components/home/main1";
 import Main2 from "@/components/home/main2";
 import Main3 from "@/components/home/main3";
+import Main4 from "@/components/home/main4";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function Home() {
       <Main1 />
       <Main3/>
       <Main2/>
+      <Main4/>
     </main>
   );
 }

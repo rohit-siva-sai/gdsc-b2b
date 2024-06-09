@@ -1,11 +1,43 @@
+import { db } from "@/config/firebase";
+import { SideBar } from "@/useStore/sideBar";
 import { Progress } from "antd";
+import { doc, updateDoc } from "firebase/firestore";
 import Link from "next/link";
-import React from "react";
-import { AiOutlineStar } from "react-icons/ai";
+import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
-const AllRfqs = ({ rfqData }) => {
+const AllRfqs = ({ rfqData,updatedRfqData,filterRfqData }) => {
+  const [updateNewRfq] = SideBar((store) => [store.updateNewRfq]);
+  const [selected,setSelected] = useState("All")
+
+  const updateStarred = async (id, star) => {
+    const userDoc = doc(db, "rfqs", id);
+
+    await updateDoc(userDoc, {
+      starred: !star,
+    });
+    console.log("updated successfully");
+    updateNewRfq();
+    toast.success("success", {
+      duration: 1000,
+      position: "top-center",
+      style: {
+        background: "black",
+        color: "white",
+      },
+    });
+
+    // await getUser(id);
+    // updateOpenUserModel(false);
+  };
+
+
+
+
   return (
     <div className="bg-gray-100 flex-1 px-2 md:px-6 md:h-[640px] pb-8  overflow-y-scroll  ">
+       <Toaster />
       <p className="font-light text-sm py-4">
         RFQs / <span className="font-normal">All</span>
       </p>
@@ -14,7 +46,28 @@ const AllRfqs = ({ rfqData }) => {
           <p className="font-semibold text-2xl px-8 text-gray-800">
             My Requests
           </p>
-         
+          <div className="flex space-x-8 ml-4 px-8">
+                <div
+                  className={`font-semibold ${selected=="All"? "text-blue-600": "text-gray-600"}  text-[17px] hover:text-rose-600 cursor-pointer`}
+                  onClick={() => {
+                    filterRfqData(1);
+                    setSelected("All")
+                  }}
+                >
+                  All
+                </div>
+                <div
+                  className={`font-semibold ${selected=="Starred"? "text-blue-600": "text-gray-600"}  text-[17px] hover:text-rose-600 cursor-pointer`}
+                  onClick={() => {
+                    filterRfqData(0);
+                    setSelected("Starred")
+                    // mapping()
+                    
+                  }}
+                >
+                  Starred
+                </div>
+              </div>
         </div>
         
         <div className="md:grid-cols-12 grid-cols-5 grid place-items-start py-2  px-2 md:px-8 pb-4 ">
@@ -35,20 +88,26 @@ const AllRfqs = ({ rfqData }) => {
           </div>
         </div>
         <div className="flex flex-col space-y-0">
-          {rfqData?.map((item) => {
+          {updatedRfqData?.map((item) => {
             return (
               <Link  href={`/myRfq/rfqList/${item.id}`}>
                 <div className="md:grid-cols-12 grid-cols-5 py-3 border px-2 md:px-8 hover:bg-gray-50  grid place-items-start ">
-                  <div className="md:col-span-1 md:flex hidden  space-x-4 items-center">
+                  <div className="md:col-span-1 md:flex hidden  space-x-4 items-center"  onClick={(e) => {
+                            e.preventDefault();
+                            updateStarred(item.id, item.starred);
+                          }}>
                     
-                    <AiOutlineStar className="text-gray-500 " size={20} />
+                    {item.starred == true ? (
+                            <AiFillStar className="text-yellow-400" size={20} />
+                          ) : (
+                            <AiOutlineStar
+                              className="text-gray-500 "
+                              size={20}
+                            />
+                          )}
                   </div>
                   <div className=" flex items-center col-span-2 md:col-span-5 space-x-4 flex-1 ">
-                    <div className="w-16 md:flex hidden  rounded h-16 bg-gray-100  items-center justify-center ">
-                      <p className="font-semibold text-center text-gray-400  text-xs">
-                        no image provided
-                      </p>
-                    </div>
+                    
                     <div className="flex  flex-col space-y-4 items-stretch ">
                       <p className="font-semibold text-sm md:text-base text-gray-400 ">
                         {item.productName}

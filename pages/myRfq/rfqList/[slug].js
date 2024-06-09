@@ -2,6 +2,7 @@
 import SimpleSideBar from "@/components/myRfq/simpleSideBar";
 import Admin from "@/components/slug/admin";
 import AllQuotes from "@/components/slug/quotesReceived/allQuotes";
+import QuotationDetails from "@/components/slug/quotesReceived/quotationDetails";
 import RequestDetails from "@/components/slug/requestDetails";
 import { db } from "@/config/firebase";
 import { Drawer } from "antd";
@@ -14,6 +15,8 @@ import { useEffect } from "react";
 const Post = () => {
   const router = useRouter();
   const [showFilter, setShowFilter] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [singleQuote,setSingleQuote] = useState()
 
   const onClose = () => {
     setShowFilter(false);
@@ -48,23 +51,23 @@ const Post = () => {
         ...doc.data(),
         id: doc.id,
       }));
-      const quote = filteredData.filter(
-        (item) => item.rfqId == id
-      );
-      
-    setQuoteData(quote)
-    console.log("ssassa", quoteData);
+      const quote = filteredData
+        .filter((item) => item.rfqId == id)
+        .sort((a, b) => b.timestamp["seconds"] - a.timestamp["seconds"]);
+      setSingleQuote(quote[0]);
+      setQuoteData(quote.slice(0,9));
+      // console.log("ssassa", quote);
     } catch (err) {
       console.log(err.message);
     }
   };
 
 
-
   const SingleRfq = async () => {
     const data1 = await getRfq(router.query.slug);
     const data2 = await getQuotes(router.query.slug);
     setRfqData({ ...data1 });
+    setIsLoading(false);
     // setQuoteData({ ...data2 });
     // console.log("hgsahgsxhgs", data2);
   };
@@ -72,6 +75,12 @@ const Post = () => {
   useEffect(() => {
     SingleRfq();
   }, [router]);
+
+  const changeSingleQuote = (item) => {
+    setSingleQuote(item);
+    console.log('item',item);
+    
+  };
   return (
     <div className="flex md:h-[640px] overflow-y-hidden  ">
      <div className=" hidden md:block w-1/6">
@@ -94,8 +103,10 @@ const Post = () => {
         RFQs  &nbsp;/&nbsp;  All &nbsp; /&nbsp;  <span className="font-normal">Quotes Received</span>
       </p>
         <div className="flex  flex-col-reverse md:flex-row space-y-reverse space-y-6  md:space-x-3  ">
-          <AllQuotes quoteData={quoteData}  />
-          <RequestDetails rfqData={rfqData}  />
+          <AllQuotes isLoading={isLoading} rfqData={rfqData} quoteData={quoteData} changeSingleQuote={changeSingleQuote} />
+          <QuotationDetails  singleQuote={singleQuote}/>
+
+          {/* <RequestDetails rfqData={rfqData}  /> */}
         </div>
       </div>
     </div>

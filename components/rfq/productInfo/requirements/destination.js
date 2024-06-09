@@ -44,7 +44,7 @@ const Destination = () => {
             }}
             onBlur={() => {
               updateRequirements(require);
-              require.destinationPort.length !=0
+              require.destinationPort?.length !=0
                 ? (scoreRequire[0].score = true)
                 : (scoreRequire[0].score = false);
               if (scoreRequire[0].score && i1 == 1) {
@@ -81,13 +81,13 @@ const Destination = () => {
           onBlur={() => {
             updateRequirements(require);
             require.shipmentTerms?.length != 0
-              ? (scoreRequire[2].score = true)
-              : (scoreRequire[2].score = false);
-            if (scoreRequire[2].score && i3 == 1) {
+              ? (scoreRequire[1].score = true)
+              : (scoreRequire[1].score = false);
+            if (scoreRequire[1].score && i3 == 1) {
               updateIncreaseProgress(5);
               setI3(2);
             }
-            if (!scoreRequire[2].score) {
+            if (!scoreRequire[1].score) {
               updateDecreaseProgress(5);
               setI3(1);
             }
@@ -133,13 +133,13 @@ const Destination = () => {
           onBlur={() => {
             updateRequirements(require);
             require.company?.length != 0
-              ? (scoreRequire[3].score = true)
-              : (scoreRequire[3].score = false);
-            if (scoreRequire[3].score && i4 == 1) {
+              ? (scoreRequire[2].score = true)
+              : (scoreRequire[2].score = false);
+            if (scoreRequire[2].score && i4 == 1) {
               updateIncreaseProgress(8);
               setI4(2);
             }
-            if (!scoreRequire[3].score) {
+            if (!scoreRequire[2].score) {
               updateDecreaseProgress(8);
               setI4(1);
             }

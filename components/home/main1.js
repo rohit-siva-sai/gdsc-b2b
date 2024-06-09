@@ -59,7 +59,7 @@ const Main1 = () => {
           <p className="font-semibold  text-white stroke">Sell Better</p>
           <p className="font-semibold  text-white stroke">Buy Better</p>
         </div>
-        <p className="font-semibold text-end text-white">The one stop shopping destination</p>
+        <p className="font-semibold text-lg text-end text-white">The one stop shopping destination !!!</p>
       
          
         </div>
